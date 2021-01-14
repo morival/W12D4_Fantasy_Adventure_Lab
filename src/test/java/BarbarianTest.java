@@ -42,8 +42,18 @@ public class BarbarianTest {
     }
 
     @Test
+    public void checkArmourName() {
+        assertEquals("Scracher", barbarian.getArmour().getArmourName());
+    }
+
+    @Test
     public void hasWeapon() {
         assertEquals(weapon, barbarian.getWeapon());
+    }
+
+    @Test
+    public void checkWeaponName() {
+        assertEquals("Smasher", barbarian.getWeapon().getWeaponName());
     }
 
     @Test

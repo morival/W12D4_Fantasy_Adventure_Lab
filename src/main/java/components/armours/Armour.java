@@ -11,6 +11,10 @@ public class Armour extends Item {
         this.armourType = armourType;
     }
 
+    public String getArmourName() {
+        return getName();
+    }
+
     public int getArmourStrength(){ return this.armourType.getArmourStrength(); }
 
     public ArmourType getType() {return armourType;}

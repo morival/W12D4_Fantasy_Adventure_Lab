@@ -43,7 +43,7 @@ public abstract class Warrior extends Player {
     }
 
     public void fightEnemy(Enemy enemy){
-        enemy.hp -= weapon.getDamageValue();
+        enemy.reduceHP(weapon.getDamageValue());
     }
     // ^^ Should this be an IAttack along with Spells? ^^
 }

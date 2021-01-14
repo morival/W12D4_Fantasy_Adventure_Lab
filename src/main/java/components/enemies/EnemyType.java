@@ -4,5 +4,7 @@ public enum EnemyType {
 
     OGRE,
     BASILISK,
-    DRAGON
+    DRAGON;
+
+
 }

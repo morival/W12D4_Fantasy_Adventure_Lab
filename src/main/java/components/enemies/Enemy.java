@@ -24,4 +24,8 @@ public class Enemy {
     public int getDamage() {
         return damage;
     }
+
+    public void reduceHP(int damage) {
+        this.hp -= damage;
+    }
 }

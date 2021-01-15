@@ -25,7 +25,7 @@ public class BarbarianTest {
         weapon2 = new Weapon("Whatever", WeaponType.CLUB);
         armour = new Armour("Scracher", ArmourType.CHAINMAIL);
         barbarian = new Barbarian("Attilia", armour, weapon);
-        enemy = new Enemy(EnemyType.BASILISK, 100, weapon2);
+        enemy = new Enemy(EnemyType.BASILISK, 25, 100, weapon2);
     }
 
     @Test
@@ -41,6 +41,8 @@ public class BarbarianTest {
     @Test
     public void hasArmour() {
         assertEquals(armour, barbarian.getArmour());
+        assertEquals(ArmourType.CHAINMAIL, barbarian.getArmourType());
+        assertEquals(20, barbarian.getArmourStrength());
     }
 
     @Test
@@ -51,6 +53,8 @@ public class BarbarianTest {
     @Test
     public void hasWeapon() {
         assertEquals(weapon, barbarian.getWeapon());
+        assertEquals(WeaponType.AXE, barbarian.getWeaponType());
+        assertEquals(3, barbarian.getWeaponDamage());
     }
 
     @Test
@@ -58,10 +62,8 @@ public class BarbarianTest {
         assertEquals("Smasher", barbarian.getWeapon().getWeaponName());
     }
 
-//    @Test
-//    public void canFightEnemy() {
-//        assertEquals(100, enemy.getHp());
-//        barbarian.fightEnemy(enemy);
-//        assertEquals(97, enemy.getHp());
-//    }
+    @Test
+    public void checkTotalDamage() {
+        assertEquals(35, barbarian.getTotalDamage());
+    }
 }

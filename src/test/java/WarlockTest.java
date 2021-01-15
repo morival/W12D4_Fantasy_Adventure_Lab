@@ -35,7 +35,7 @@ public class WarlockTest {
 
     @Test
     public void canPickSpell() {
-        assertEquals(Summon.OGRE, warlock.getSpell());
         assertEquals("Summon Ogre", warlock.getSpellName());
+        assertEquals(Summon.OGRE, warlock.getSpell());
     }
 }

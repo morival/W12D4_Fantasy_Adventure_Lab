@@ -1,11 +1,8 @@
 package interfaces;
 
-import character.Player;
-import components.enemies.Enemy;
-
 public interface IFight {
 
-//    void reduceHP(Player player);
+    int getTotalDamage();
 
-    void fight(Player player);
+    void reduceHP(int unitDamage);
 }

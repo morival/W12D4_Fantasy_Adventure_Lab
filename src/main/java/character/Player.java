@@ -45,7 +45,7 @@ public abstract class Player {
         this.hp -= damage;
     }
 
-//    public void fight(Enemy enemy){
-//        this.reduceHP(enemy.getDamage());
+//    public void fight(Enemy enemy) {
+//        enemy.reduceHP(getTotalDamage());
 //    }
 }

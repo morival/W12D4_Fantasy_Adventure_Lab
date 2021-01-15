@@ -30,8 +30,8 @@ public class WizardTest {
 
     @Test
     public void canPickSpell() {
-        assertEquals(50, wizard.getSpell());
         assertEquals("Fireball", wizard.getSpellName());
+        assertEquals(50, wizard.getSpell());
     }
 
 //    @Test

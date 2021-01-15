@@ -4,10 +4,10 @@ import character.Player;
 import components.armours.Armour;
 import components.armours.ArmourType;
 import components.weapons.Weapon;
-import components.enemies.Enemy;
 import components.weapons.WeaponType;
+import interfaces.IFight;
 
-public abstract class Warrior extends Player {
+public abstract class Warrior extends Player implements IFight {
 
     private Armour armour;
     private Weapon weapon;
@@ -42,8 +42,8 @@ public abstract class Warrior extends Player {
         return this.weapon.getDamageValue();
     }
 
-//    public void fightEnemy(Enemy enemy){
-//        enemy.reduceHP(weapon.getDamageValue());
-//    }
-    // ^^ Should this be an IAttack along with Spells? ^^
+    public int getTotalDamage() {
+        int totalDamage = getAttack() + getWeaponDamage();
+        return totalDamage;
+    }
 }

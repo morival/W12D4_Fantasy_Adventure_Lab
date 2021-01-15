@@ -9,8 +9,8 @@ public abstract class Healer extends Player {
     private Potion potion;
     private Herb herb;
 
-    public Healer(String name, int hp, Potion potion, Herb herb) {
-        super(name, hp);
+    public Healer(String name, int attack, int hp, Potion potion, Herb herb) {
+        super(name, attack, hp);
         this.potion = potion;
         this.herb = herb;
     }

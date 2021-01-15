@@ -14,7 +14,7 @@ public class KnightTest {
 
     @Before
     public void setUp() {
-        knight = new Knight("Sir Lancelot", 250, armour, weapon);
+        knight = new Knight("Sir Lancelot", armour, weapon);
         weapon = new Weapon("Excalibur", WeaponType.SWORD);
         armour = new Armour("Metal Shirt", ArmourType.STEEL);
     }

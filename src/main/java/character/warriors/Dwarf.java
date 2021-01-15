@@ -5,8 +5,8 @@ import components.weapons.Weapon;
 
 public class Dwarf extends Warrior {
 
-    public Dwarf(String name, int hp, Armour armour, Weapon weapon){
-        super(name, 300, armour, weapon);
+    public Dwarf(String name, Armour armour, Weapon weapon){
+        super(name, 31, 700, armour, weapon);
     }
 
 //    public void craftNewWeapon(String name, String type, int damageValue){

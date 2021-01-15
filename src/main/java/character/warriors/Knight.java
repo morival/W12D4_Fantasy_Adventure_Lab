@@ -5,7 +5,7 @@ import components.weapons.Weapon;
 
 public class Knight extends Warrior {
 
-    public Knight(String name, int hp, Armour armour, Weapon weapon){
-        super(name, 250, armour, weapon);
+    public Knight(String name, Armour armour, Weapon weapon){
+        super(name, 29, 650, armour, weapon);
     }
 }

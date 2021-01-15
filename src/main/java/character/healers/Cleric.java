@@ -8,12 +8,12 @@ public class Cleric extends Healer {
 
     private Spell spell;
 
-public Cleric(String name, int hp, Potion potion, Herb herb, Spell spell){
-    super(name, 150, potion, herb);
-    this.spell = spell;
+public Cleric(String name, Potion potion, Herb herb){
+    super(name, 24, 550, potion, herb);
+//    this.spell = spell;
     }
 
-    public Spell getSpell(){
-        return spell;
-    }
+//    public Spell getSpell(){
+//        return spell;
+//    }
 }

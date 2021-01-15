@@ -10,27 +10,32 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class EnemyTest {
+public class RoomTest {
 
+    Room room;
     Weapon weapon;
     Weapon weapon2;
     Armour armour;
-    Enemy enemy;
     Barbarian barbarian;
+    Enemy enemy;
+
 
     @Before
     public void setUp() {
         weapon = new Weapon("Smasher", WeaponType.AXE);
         weapon2 = new Weapon("Whatever", WeaponType.CLUB);
         armour = new Armour("Scracher", ArmourType.CHAINMAIL);
-        enemy = new Enemy(EnemyType.BASILISK, 100, weapon2);
         barbarian = new Barbarian("Attilia", armour, weapon);
+        enemy = new Enemy(EnemyType.BASILISK, 100, weapon2);
+        room = new Room();
     }
 
-    @Test
-    public void canAttackPlayer() {
-        assertEquals(725, barbarian.getHP());
-        enemy.fightPlayer(barbarian);
-        assertEquals(724,barbarian.getHP());
-    }
+//    @Test
+//    public void canFightTurn() {
+//        room.addEnemy(enemy);
+//        room.addCharacter(barbarian);
+//        room.fightTurn(barbarian,enemy);
+//        assertEquals(97, enemy.getHp());
+//        assertEquals(715,barbarian.getHP());
+//    }
 }

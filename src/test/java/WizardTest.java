@@ -1,8 +1,6 @@
 import character.mages.Wizard;
-import components.creatures.CreatureType;
-import components.spells.Spell;
-import components.creatures.Creature;
-import components.spells.SpellType;
+import components.spells.OffensiveSpell;
+import components.spells.SpellDamage;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -11,15 +9,13 @@ import static org.junit.Assert.assertEquals;
 public class WizardTest {
 
     Wizard wizard;
-    Spell spell;
-    Creature creature;
+    OffensiveSpell offensiveSpell;
 
 
     @Before
     public void setUp(){
-        spell = new Spell("Fireball", SpellType.FIREBALL);
-        creature = new Creature("Dragon", CreatureType.SMAUG);
-        wizard = new Wizard("Gandalf", 150, spell, creature);
+        offensiveSpell = new OffensiveSpell("Fireball", SpellDamage.FIREBALL);
+        wizard = new Wizard("Gandalf", offensiveSpell);
     }
 
     @Test
@@ -29,16 +25,17 @@ public class WizardTest {
 
     @Test
     public void hasHP() {
-        assertEquals(150, wizard.getHP());
+        assertEquals(450, wizard.getHP());
     }
 
     @Test
-    public void hasSpell() {
-        assertEquals(spell, wizard.getSpell());
+    public void canPickSpell() {
+        assertEquals(50, wizard.getSpell());
+        assertEquals("Fireball", wizard.getSpellName());
     }
 
-    @Test
-    public void hasCreature() {
-        assertEquals(creature, wizard.getCreature());
-    }
+//    @Test
+//    public void hasCreature() {
+//        assertEquals(creature, wizard.getCreature());
+//    }
 }

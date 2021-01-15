@@ -12,8 +12,8 @@ public abstract class Warrior extends Player {
     private Armour armour;
     private Weapon weapon;
 
-    public Warrior(String name, int hp, Armour armour, Weapon weapon){
-        super(name, hp);
+    public Warrior(String name, int attack, int hp, Armour armour, Weapon weapon){
+        super(name, attack, hp);
         this.armour = armour;
         this.weapon = weapon;
     }
@@ -42,8 +42,8 @@ public abstract class Warrior extends Player {
         return this.weapon.getDamageValue();
     }
 
-    public void fightEnemy(Enemy enemy){
-        enemy.reduceHP(weapon.getDamageValue());
-    }
+//    public void fightEnemy(Enemy enemy){
+//        enemy.reduceHP(weapon.getDamageValue());
+//    }
     // ^^ Should this be an IAttack along with Spells? ^^
 }

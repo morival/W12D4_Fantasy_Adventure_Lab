@@ -2,24 +2,20 @@ package character.mages;
 
 import character.Player;
 import components.spells.Spell;
-import components.creatures.Creature;
+import components.spells.OffensiveSpell;
 
 public abstract class Mage extends Player {
 
-    private Spell spell;
-    private Creature creature;
+    public Mage(String name, int attack, int hp){
+        super(name, attack, hp);
 
-    public Mage(String name, int hp, Spell spell, Creature creature){
-        super(name, hp);
-        this.spell = spell;
-        this.creature = creature;
     }
 
-    public Spell getSpell() {
-        return spell;
-    }
+//    public int getSpell() {
+//        return offensiveSpell.getSpellEffect();
+//    }
 
-    public Creature getCreature() {
-        return creature;
-    }
+//    public Creature getCreature() {
+//        return creature;
+//    }
 }

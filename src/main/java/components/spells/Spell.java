@@ -1,8 +1,9 @@
 package components.spells;
 
 import components.Item;
+import components.spells.OffensiveSpell;
 
-public class Spell extends Item {
+public abstract class Spell extends Item {
 
     private SpellType spellType;
 
@@ -11,7 +12,11 @@ public class Spell extends Item {
         this.spellType = spellType;
     }
 
-    public int getDamageValue() {return this.spellType.getDamageValue();}
+//    public int getDamageValue() {return this.spellType.getDamageValue();}
 
-    public SpellType getType() {return spellType;}
+    public SpellType getSpellType() {return spellType;}
+
+//    public int getDamageOfSpell() {
+//        return
+//    }
 }

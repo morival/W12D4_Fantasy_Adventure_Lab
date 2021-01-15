@@ -1,15 +1,19 @@
 package components.enemies;
 
-public class Enemy {
+import character.Player;
+import components.weapons.Weapon;
+import interfaces.IFight;
+
+public class Enemy implements IFight {
 
     private EnemyType enemyType;
     public int hp;
-    private int damage;
+    private Weapon weapon;
 
-    public Enemy(EnemyType enemyType, int hp, int damage){
+    public Enemy(EnemyType enemyType, int hp, Weapon weapon){
         this.enemyType = enemyType;
         this.hp = hp;
-        this.damage = damage;
+        this.weapon = weapon;
     }
 
 
@@ -22,10 +26,19 @@ public class Enemy {
     }
 
     public int getDamage() {
-        return damage;
+        return weapon.getDamageValue();
     }
+
 
     public void reduceHP(int damage) {
         this.hp -= damage;
+    }
+
+    public void fight(Player player) {
+        player.reduceHP(getDamage());
+    }
+
+    public void fightPlayer(Player player){
+        player.reduceHP(getDamage());
     }
 }

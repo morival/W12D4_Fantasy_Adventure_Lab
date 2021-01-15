@@ -22,8 +22,8 @@ public class ClericTest {
     public void setUp() {
         potion = new Potion("Damage Potion", PotionType.POWER_POTION);
         herb = new Herb("Death_bell", HerbType.DEATHBELL);
-        spell = new Spell("Fireball", SpellType.FIREBALL);
-        cleric = new Cleric("Zsolt", 150, potion, herb, spell);
+//        spell = new Spell("Fireball", SpellType.FIREBALL);
+        cleric = new Cleric("Zsolt", potion, herb);
     }
 
     @Test
@@ -33,7 +33,7 @@ public class ClericTest {
 
     @Test
     public void hasHP() {
-        assertEquals(150, cleric.getHP());
+        assertEquals(550, cleric.getHP());
     }
 
     @Test
@@ -46,8 +46,8 @@ public class ClericTest {
         assertEquals(herb, cleric.getHerb());
     }
 
-    @Test
-    public void hasSpell() {
-        assertEquals(spell, cleric.getSpell());
-    }
+//    @Test
+//    public void hasSpell() {
+//        assertEquals(spell, cleric.getSpell());
+//    }
 }

@@ -17,7 +17,7 @@ public class DwarfTest {
 
     @Before
     public void setUp() {
-        dwarf = new Dwarf("Thorin", 300, armour, weapon);
+        dwarf = new Dwarf("Thorin", armour, weapon);
         weapon = new Weapon("War Hammer", WeaponType.WARHAMMER);
         armour = new Armour("Norgothrond", ArmourType.DAEDRIC);
     }

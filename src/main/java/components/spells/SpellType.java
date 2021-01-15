@@ -2,14 +2,14 @@ package components.spells;
 
 public enum SpellType {
 
-    FIREBALL(5),
-    LIGHTNING_STRIKE(6),
-    FRENZY(3);
+    OFFENSIVE("wizard"),
+    SUMMONING("warlock"),
+    SUPPORTIVE("cleric");
 
-    private final int damageValue;
+    private final String availableFor;
 
-    SpellType(int damageValue){this.damageValue = damageValue;}
+    SpellType(String availableFor){this.availableFor = availableFor;}
 
-    public int getDamageValue(){return damageValue;}
+    public String getSpellType(){return availableFor;}
 
 }

@@ -15,5 +15,9 @@ public class Creature extends Item {
         return this.creatureType.getDamageValue();
     }
 
+    public int getHP() {
+        return this.creatureType.getHp();
+    }
+
     public CreatureType creatureType() {return creatureType;}
 }

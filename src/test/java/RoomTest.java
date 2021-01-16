@@ -20,6 +20,7 @@ public class RoomTest {
 
     Weapon weapon;
     Weapon weapon2;
+    Weapon weapon3;
     Armour armour;
     OffensiveSpell offensiveSpell;
     Barbarian barbarian;
@@ -33,11 +34,12 @@ public class RoomTest {
     public void setUp() {
         weapon = new Weapon("Smasher", WeaponType.AXE);
         weapon2 = new Weapon("Whatever", WeaponType.CLUB);
+        weapon3 = new Weapon("no weapon", WeaponType.NON);
         armour = new Armour("Scracher", ArmourType.CHAINMAIL);
         offensiveSpell = new OffensiveSpell("Fireball", SpellDamage.FIREBALL);
         barbarian = new Barbarian("Attilia", armour, weapon);
         wizard = new Wizard("Saruman", offensiveSpell);
-        enemy = new Enemy(EnemyType.BASILISK, 25, 100, weapon2);
+        enemy = new Enemy(EnemyType.BASILISK, 25, 100, weapon3);
         treasure = new Treasure("Gold", TreasureType.GOLD100);
         room = new Room(barbarian, enemy);
     }
@@ -66,7 +68,7 @@ public class RoomTest {
     @Test
     public void showUnitsTotalDamage() {
         assertEquals(35, room.getUnit1Damage(barbarian));
-        assertEquals(26, room.getUnit2Damage(enemy));
+        assertEquals(25, room.getUnit2Damage(enemy));
     }
 
     @Test
@@ -74,21 +76,21 @@ public class RoomTest {
 //        room.addCharacter(barbarian);
 //        room.addEnemy(enemy);
         room.fightTurn(barbarian, enemy);
-        assertEquals(699, barbarian.getHP());
+        assertEquals(700, barbarian.getHP());
         assertEquals(65, enemy.getHP());
     }
 
     @Test
     public void canFightMeleeBattle() {
         assertEquals("Character won", room.fightBattle(barbarian, enemy));
-        assertEquals(647, barbarian.getHP());
+        assertEquals(650, barbarian.getHP());
         assertEquals(-5, enemy.getHP());
     }
 
     @Test
     public void canFightMagicAttackBattle() {
         assertEquals("Character won", room.fightBattle(wizard, enemy));
-        assertEquals(398, wizard.getHP());
+        assertEquals(400, wizard.getHP());
         assertEquals(0, enemy.getHP());
     }
 

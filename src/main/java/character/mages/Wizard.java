@@ -21,7 +21,6 @@ public class Wizard extends Mage implements IFight {
     }
 
     public int getTotalDamage() {
-        int totalDamage = getSpell();
-        return totalDamage;
+        return getSpell();
     }
 }

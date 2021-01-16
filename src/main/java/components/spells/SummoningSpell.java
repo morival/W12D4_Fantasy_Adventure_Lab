@@ -13,6 +13,10 @@ public class SummoningSpell extends Spell{
         return summon;
     }
 
+//    public int getAttack() {
+//        return summon.getAttack();
+//    }
+
 //    public int getSpellEffect() {
 //        return summon.getSpellDamage();
 //    }

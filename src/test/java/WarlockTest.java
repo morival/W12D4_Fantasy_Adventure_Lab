@@ -18,7 +18,7 @@ public class WarlockTest {
 
     @Before
     public void setUp(){
-        creature = new Creature("Dragon", CreatureType.SMAUG);
+        creature = new Creature("Dragon", CreatureType.DRAGON);
         summoningSpell = new SummoningSpell("Summon Ogre", Summon.OGRE);
         warlock = new Warlock("Brutus", summoningSpell);
     }
@@ -37,5 +37,7 @@ public class WarlockTest {
     public void canPickSpell() {
         assertEquals("Summon Ogre", warlock.getSpellName());
         assertEquals(Summon.OGRE, warlock.getSpell());
+        assertEquals(35, warlock.getSummonedCreatureAttack());
+        assertEquals(800, warlock.getSummonedCreatureHP());
     }
 }

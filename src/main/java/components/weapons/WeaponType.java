@@ -2,6 +2,7 @@ package components.weapons;
 
 public enum WeaponType {
 
+    NON(0),
     AXE(3),
     SWORD(5),
     CLAYMORE(6),

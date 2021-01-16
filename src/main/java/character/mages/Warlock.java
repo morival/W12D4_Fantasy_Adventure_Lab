@@ -1,11 +1,10 @@
 package character.mages;
 
-import components.creatures.Creature;
-import components.spells.Spell;
 import components.spells.Summon;
 import components.spells.SummoningSpell;
+import interfaces.IFight;
 
-public class Warlock extends Mage{
+public class Warlock extends Mage implements IFight {
 
     SummoningSpell summoningSpell;
 
@@ -20,5 +19,17 @@ public class Warlock extends Mage{
 
     public Summon getSpell() {
         return summoningSpell.getSummonType();
+    }
+
+    public int getSummonedCreatureAttack() {
+        return summoningSpell.getSummonType().getAttack();
+    }
+
+    public int getSummonedCreatureHP() {
+        return summoningSpell.getSummonType().getHp();
+    }
+
+    public int getTotalDamage() {
+        return getSummonedCreatureAttack();
     }
 }

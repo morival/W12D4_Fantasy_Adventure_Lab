@@ -1,9 +1,9 @@
 package character.mages;
 
 import components.spells.OffensiveSpell;
-import components.spells.Spell;
+import interfaces.IFight;
 
-public class Wizard extends Mage{
+public class Wizard extends Mage implements IFight {
 
     OffensiveSpell offensiveSpell;
 
@@ -18,5 +18,10 @@ public class Wizard extends Mage{
 
     public int getSpell() {
         return offensiveSpell.getSpellEffect();
+    }
+
+    public int getTotalDamage() {
+        int totalDamage = getSpell();
+        return totalDamage;
     }
 }

@@ -1,8 +1,11 @@
+import character.mages.Wizard;
 import character.warriors.Barbarian;
 import components.armours.Armour;
 import components.armours.ArmourType;
 import components.enemies.Enemy;
 import components.enemies.EnemyType;
+import components.spells.OffensiveSpell;
+import components.spells.SpellDamage;
 import components.treasures.Treasure;
 import components.treasures.TreasureType;
 import components.weapons.Weapon;
@@ -18,7 +21,9 @@ public class RoomTest {
     Weapon weapon;
     Weapon weapon2;
     Armour armour;
+    OffensiveSpell offensiveSpell;
     Barbarian barbarian;
+    Wizard wizard;
     Enemy enemy;
     Treasure treasure;
     Room room;
@@ -29,7 +34,9 @@ public class RoomTest {
         weapon = new Weapon("Smasher", WeaponType.AXE);
         weapon2 = new Weapon("Whatever", WeaponType.CLUB);
         armour = new Armour("Scracher", ArmourType.CHAINMAIL);
+        offensiveSpell = new OffensiveSpell("Fireball", SpellDamage.FIREBALL);
         barbarian = new Barbarian("Attilia", armour, weapon);
+        wizard = new Wizard("Saruman", offensiveSpell);
         enemy = new Enemy(EnemyType.BASILISK, 25, 100, weapon2);
         treasure = new Treasure("Gold", TreasureType.GOLD100);
         room = new Room(barbarian, enemy);
@@ -64,12 +71,25 @@ public class RoomTest {
 
     @Test
     public void canTakeDamage() {
-        room.addCharacter(barbarian);
-        room.addEnemy(enemy);
+//        room.addCharacter(barbarian);
+//        room.addEnemy(enemy);
         room.fightTurn(barbarian, enemy);
         assertEquals(699, barbarian.getHP());
         assertEquals(65, enemy.getHP());
     }
 
+    @Test
+    public void canFightMeleeBattle() {
+        assertEquals("Character won", room.fightBattle(barbarian, enemy));
+        assertEquals(647, barbarian.getHP());
+        assertEquals(-5, enemy.getHP());
+    }
+
+    @Test
+    public void canFightMagicAttackBattle() {
+        assertEquals("Character won", room.fightBattle(wizard, enemy));
+        assertEquals(398, wizard.getHP());
+        assertEquals(0, enemy.getHP());
+    }
 
 }

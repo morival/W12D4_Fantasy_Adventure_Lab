@@ -70,4 +70,23 @@ public class Room {
         unit1.reduceHP(getUnit2Damage(unit2));
         unit2.reduceHP(getUnit1Damage(unit1));
     }
+
+    public String fightBattle(IFight unit1, IFight unit2) {
+        fightTurn(unit1, unit2);
+        System.out.println( "Hero received " + getUnit2Damage(unit2) + " damage and has " + unit1.getHP() + " HP.");
+        System.out.println( "Enemy received " + getUnit1Damage(unit1) + " damage and has " + unit2.getHP() + " HP.");
+        if (unit1.getHP() > 0 && unit2.getHP() > 0) {
+            return fightBattle(unit1, unit2);
+        } else if (unit1.getHP() <= 0) {
+            System.out.println("Enemy won");
+            return "Enemy won";
+        } else if (unit2.getHP() <= 0) {
+            System.out.println("Character won");
+            return "Character won";
+        } else {
+            System.out.println("Error");
+            return "Error";
+        }
+
+    }
 }
